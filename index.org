@@ -1,3 +1,0 @@
-#+TITLE: Contenido de cursos publicados en GitHub
-
-En esta página se publicará el contenido de los [[https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/index.html][cursos impartidos]].
