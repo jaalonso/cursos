@@ -276,3 +276,11 @@ ol[type=i] {
     position: relative;
     font-size: xx-small;
 }
+
+#tabla-derecha
+{
+    margin-left: auto; /* Empuja la tabla hacia la derecha */
+    margin-right: 0;   /* Asegura que esté completamente alineada */
+    border-collapse: collapse; /* Unir los bordes (por si se usan más adelante) */
+    border: none; /* Elimina los bordes de la tabla */
+}
