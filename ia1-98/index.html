@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 01 de marzo del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Inteligencia artificial I (1999-99)</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Inteligencia artificial I (1999-99)</h1>
+
+<div id="outline-container-org87b8cd4" class="outline-2">
+<h2 id="org87b8cd4">Temas con transparencias de clase</h2>
+<div class="outline-text-2" id="text-org87b8cd4">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/ia1-98/temas/tema-01.pdf">Tema 1: Introducción a la inteligencia artificial</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/ia1-98/temas/tema-02.pdf">Tema 2: Representación en Lisp de problemas de estados</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/ia1-98/temas/tema-03.pdf">Tema 3: Técnicas básicas de búsqueda para la resolución de problemas</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/ia1-98/temas/tema-04.pdf">Tema 4: Técnicas heurísticas de búsqueda para la resolución de problemas</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/ia1-98/temas/tema-05.pdf">Tema 5: Técnicas heurísticas en juegos</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org34f3de6" class="outline-2">
+<h2 id="org34f3de6">Códigos de los programas explicados en clase</h2>
+<div class="outline-text-2" id="text-org34f3de6">
+<ul class="org-ul">
+<li>Tema 2: Representación en Lisp de problemas de estados.
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-granjero-1.lsp">Problema del granjero con listas</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/verifica.lsp">Verificación de soluciones</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-granjero-2.lsp">Problema del granjero con estructuras</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-jarras-1.lsp">Problema de las jarras con listas</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-jarras-2.lsp">Problema de las jarras con estructuras</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-viaje.lsp">Problema del viaje por Andalucía</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-8-puzzle.lsp">Problema del 8-puzzle</a></li>
+</ul></li>
+<li>Tema 3: Técnicas básicas de búsqueda para la resolución de problemas.
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-anchura.lsp">Búsqueda en anchura</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-profundidad.lsp">Búsqueda en profundidad</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/p-paseo.lsp">Problema del paseo</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-profundidad-acotada.lsp">Búsqueda en profundidad acotada</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-profundidad-iterativa.lsp">Búsqueda en profundidad iterativa</a></li>
+</ul></li>
+<li>Tema 4: Técnicas heurísticas de búsqueda para la resolución de problemas.
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-escalada.lsp">Búsqueda en escalada</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-primero-el-mejor.lsp">Búsqueda por primero el mejor</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-optimal.lsp">Búsqueda optimal</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/programas/b-a-estrella-1.lsp">Búsqueda A* (I)</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6a97a6" class="outline-2">
+<h2 id="orgd6a97a6">Prácticas de laboratorio</h2>
+<div class="outline-text-2" id="text-orgd6a97a6">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/20101001144248/http://www.cs.us.es/~jruiz/ia1/practicas/practica-0/practica-0.txt">Práctica 0 (1ª parte): Introducción a Emacs.</a></li>
+<li><a href="https://web.archive.org/web/20101001144248/http://www.cs.us.es/~jruiz/ia1/practicas/practica-0/practica-0.lsp">Práctica 0 (2ª parte): Introducción a Lisp</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-1/practica-1.lsp">Práctica 1: Ejercicios de introducción a Lisp</a> y su <a href="https://web.archive.org/web/20250301155447/https://www.cs.us.es/~jruiz/ia1/practicas/practica-1/practica-1-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-2/practica-2.lsp">Práctica 2: Misioneros y caníbales</a> y su <a href="https://web.archive.org/web/20250301155447/https://www.cs.us.es/~jruiz/ia1/practicas/practica-2/practica-2-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-3/practica-3.lsp">Práctica 3 (1ª parte): Movimiento del caballo</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-3/practica-3-bis.lsp">Práctica 3 (1ª parte): Movimiento del caballo. Representación alternativa</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-4/practica-4-1.lsp">Práctica 4 (1ª parte): Recorrido del caballo</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-4/practica-4-1-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-4/practica-4-2.lsp">Práctica 4 (2ª parte): Búsqueda ciega (versión recursiva)</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-4/practica-4-2-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-5/practica-5.lsp">Práctica 5: El problema de las n-reinas</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-6/practica-6-1.lsp">Práctica 6 (1ª parte): Heurísticas en el 8 puzzle</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-6/practica-6-1-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-6/practica-6-2.lsp">Práctica 6 (2ª parte): Heurística en el problema de los misioneros y caníbales</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-6/practica-6-2-sol.lsp">dolución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-7/practica-7.lsp">Práctica 7: El problema de las n-reinas con heurísticas</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-8/practica-8.lsp">Práctica 8: Búsqueda en juegos (La mesa redonda)</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-8/practica-8-sol.lsp">solución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-10/practica-10.pl">Práctica 10: Ejercicios de Prolog</a> y su <a href="https://web.archive.org/web/http://www.cs.us.es/~jruiz/ia1/practicas/practica-10/practica-10-sol.pl">solución</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8b1a9c9" class="outline-2">
+<h2 id="org8b1a9c9">Exámenes</h2>
+<div class="outline-text-2" id="text-org8b1a9c9">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/examenes/examen-1.pdf">Examen del 12 de febrero de 1999</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/ia1-98/examenes/examen-2.pdf">Examen del 12 de abril de 1999</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2ab67fc" class="outline-2">
+<h2 id="org2ab67fc">Bibliografía</h2>
+<div class="outline-text-2" id="text-org2ab67fc">
+<ul class="org-ul">
+<li>Borrajo, D. y otros <i>Inteligencia artificial: Métodos y técnicas</i>  (Centro de estudios Ramón Areces, 1993).</li>
+<li>Copeland, J. <i>Inteligencia artificial</i>  (Alianza, 1996)</li>
+<li>Crevier, D. <i>Inteligencia artificial</i>  (Acento, 1996)</li>
+<li>Dean, T.; Allen, J. y Aloimonos, Y. <i>Artificial Intelligence (Theory and Practice)</i>  (Benjamin Cummings, 1995)</li>
+<li>Ginsberg, M. <i>Essentials of Artificial Intelligence</i>  (Morgan Kaufmann Publishers, 1993)</li>
+<li>Haton, J.P. y Haton, M.C. <i>La Inteligencia Artificial: una aproximación</i>  (Paidós, 1991)</li>
+<li>Lucas, P. y Gaag, L.v.d. <i>Principles of Expert Systems</i>  (Addison-Wesley, 1991).</li>
+<li>Luger, G.F. y Stubblefield, W.A. <i>Artificial Intelligence (Structurees and Strategies for Complex Problem Solving (2nd edition)</i>  (Benjamin Cummings, 1993)</li>
+<li>McCorduck, P. <i>Máquinas que piensan</i>  (Tecnos, 1991)</li>
+<li>Milner, W.L. <i>Common Lisp: A tutorial</i>  (Prentice Hall, 1988)</li>
+<li>Mira, J.; Delgado, A.E.; Boticario, J.G. y Díez, F.J. <i>Aspectos básicos de la Inteligencia Artificial</i>  (Sanz y Torres, 1995)</li>
+<li>Rich, E. y Knight, K. <i>Inteligencia artificial (segunda edición)</i>  (McGraw-Hill Interamericana, 1994).</li>
+<li>Russell, S. y Norvig, P. <i>Artificial Intelligence (A Modern Approach)</i>  (Prentice-Hall International, 1995)</li>
+<li>Shirai, Y. y Tsujii, J. <i>Inteligencia artificial: Conceptos, técnicas y aplicaciones</i>  (Ariel, 1987).</li>
+<li>Steele, G.L. <i>Common Lisp the Language, 2nd edition</i>  (Digital Press, 1990)</li>
+<li>Tanimoto, S.L. <i>The Elements of Artificial Intelligence (Using Common Lisp)</i>  (Computer Science Pres, 1990)</li>
+<li>Winston, P.R. <i>Inteligencia artificial (3a. ed.)</i>  (Addison-Wesley, 1994).</li>
+<li>Winston, P.R. y Horn, B.K. <i>LISP (3a. ed.)</i>  (Addison-Wesley, 1991).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1fab6dd" class="outline-2">
+<h2 id="org1fab6dd">Sistemas</h2>
+<div class="outline-text-2" id="text-org1fab6dd">
+<ul class="org-ul">
+<li><a href="https://clisp.sourceforge.io">Clisp</a></li>
+<li><a href="https://www.swi-prolog.org/">SWI Prolog</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr>
+<table border="0" align="right">
+ <tr>
+  <td><a href="https://jaalonso.github.io">José A. Alonso Jiménez</a></td>
+ </tr>
+ <tr>
+  <td>Sevilla, 01 de marzo del 2025</td>
+ </tr>
+ <tr>
+  <td><i class="fa fa-cc"></i> Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/es/">Creative Commons</a>.</td>
+</tr>
+</div>
+</body>
+</html>
