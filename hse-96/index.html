@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 01 de marzo del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Heurística y sistemas expertos (1996-97)</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Heurística y sistemas expertos (1996-97)</h1>
+<div id="table-of-contents" role="doc-toc">
+<h2>&Iacute;ndice</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orge19eafb">1. Temas</a></li>
+<li><a href="#orge9ac56b">2. Prácticas:</a></li>
+<li><a href="#org80104aa">3. Bibliografía:</a></li>
+</ul>
+</div>
+</div>
+<p>
+El curso se estructura en tres partes. En la primera, se aborda la
+búsqueda en espacios de estados, implementando los algoritmos
+correspondientes en Lisp. En la segunda parte, se explora la
+construcción de los sistemas expertos utilizando CLIPS como
+herramienta principal. Finalmente, en la tercera parte, se analiza
+Maxima como un ejemplo práctico de sistema experto.
+</p>
+
+<div id="outline-container-orge19eafb" class="outline-2">
+<h2 id="orge19eafb"><span class="section-number-2">1.</span> Temas</h2>
+<div class="outline-text-2" id="text-1">
+<ul class="org-ul">
+<li>Primera parte: Búsqueda en espacios de estados:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-01.pdf">Tema 1: Introducción a la inteligencia artificia</a>l.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-02.pdf">Tema 2: Problemas y espacios de estados</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-03.pdf">Tema 3: Resolución de problemas mediante búsqueda sin información</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-04.pdf">Tema 4: Resolución de problemas mediante búsqueda heurística</a>.</li>
+</ul></li>
+<li>Segunda parte: Sistemas expertos mediante CLIPS:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-05.pdf">Tema 5: Introducción a los sistemas expertos</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-06.pdf">Tema 6: Hechos y reglas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-07.pdf">Tema 7: Variables</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-08.pdf">Tema 8: Plantillas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-09.pdf">Tema 9: Restricciones y funciones</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-10.pdf">Tema 10: Lectura de datos</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-11.pdf">Tema 11: Resolución de problemas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-12.pdf">Tema 12: Técnicas de contro</a>l</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-13.pdf">Tema 13: Patrones lógico</a>s</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-14.pdf">Tema 14: Acciones procedimentales</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-15.pdf">Tema 15: Funciones</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-16.pdf">Tema 16: Problemas de espacios de estados (heurísticas)</a>.</li>
+</ul></li>
+<li>Tercera parte: Ejemplo de sistema experto:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/temas/tema-17.pdf">Tema 17: Sistema experto de cálculo simbólico</a>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge9ac56b" class="outline-2">
+<h2 id="orge9ac56b"><span class="section-number-2">2.</span> Prácticas:</h2>
+<div class="outline-text-2" id="text-2">
+<ul class="org-ul">
+<li>Práctica 1: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-1/practica-01.lsp">Enunciado</a> y <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-1/practica-01.exp">experimentos</a>.</li>
+<li>Práctica 2: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-2/practica-02.txt">Enunciado</a> y auxiliares (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-1/hanoi.lsp">hanoi.lsp</a> y <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-2/busqueda-ciega.lsp">busqueda-ciega.lsp</a>).</li>
+<li>Práctica 3: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-3/practica-03.txt">Enunciado</a> y auxiliares (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-3/8-puzzle.lsp">8-puzzle.lsp</a> y <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-3/busqueda-heuristica.lsp">busqueda-heuristica.lsp</a>).</li>
+<li>Práctica 4: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-4/practica-04.txt">Enunciado</a> y auxiliar (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-4/colores.clp">colores.clp</a>).</li>
+<li>Práctica 5: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-5/practica-05.txt">Enunciado</a> y auxiliares (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-5/areas.clp">areas.clp</a> y <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-5/sensores.clp">sensores.clp</a>).</li>
+<li>Práctica 6: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-6/practica-06.txt">Enunciado</a>.</li>
+<li>Práctica 7: <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/practica-07.txt">Enunciado</a> y auxiliares (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/busqueda-heuristica-sin-operadores.lsp">busqueda-heuristica-sin-operadores.lsp</a>, <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/misioneros-clp.exp">misioneros-clp.exp</a>, <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/misioneros-2-clp.exp">misioneros-2-clp.exp</a>, <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/misioneros-lsp.exp">misioneros-lsp.exp</a> y <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/hse-96/practicas/practica-7/misioneros-2-lsp.exp">misioneros-2-lsp.exp</a>).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org80104aa" class="outline-2">
+<h2 id="org80104aa"><span class="section-number-2">3.</span> Bibliografía:</h2>
+<div class="outline-text-2" id="text-3">
+<ul class="org-ul">
+<li>Borrajo, D. y otros <b>Inteligencia artificial: Métodos y técnicas</b>  (Centro de estudios Ramón Areces, 1993).</li>
+<li>Blurock, S. <b>Knowledge based engineering</b>. (Johannes Kepler University).</li>
+<li>Giarrantano, J.C. y Riley, G. <b>Expert systems principles and programming</b>  (PWS Pub. Co., 1989).</li>
+<li>Haton, J.P. y Haton, M.C. <b>La inteligencia artificial: una aproximación</b>  (Paidós, 1991).</li>
+<li>Pazzani, M <b><a href="https://web.archive.org/web/http://www.ics.uci.edu/~pazzani/171.html">An introduction to artificial intelligence</a></b> (University of California, Irvine)</li>
+<li>Rich, E. y Knight, K. <b>Inteligencia artificial (segunda edición)</b>  (McGraw&#x2013;Hill Interamericana, 1994).</li>
+<li>Shirai, Y. y Tsujii, J. <b>Inteligencia artificial: Conceptos, técnicas y aplicaciones</b>  (Ariel, 1987).</li>
+<li>Steele, G.S. <b>Common Lisp the Language, 2nd Edition</b>  (Digital Press, 1990).</li>
+<li>Winston, P.R. <b>Inteligencia artificial (tercera edición)</b>  (Addison-Wesley, 1994).</li>
+<li>Winston, P.R. y Horn, B.K. <b>LISP (tercera edición)</b>  (Addison-Wesley, 1991).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr>
+<table border="0" align="right">
+ <tr>
+  <td><a href="https://jaalonso.github.io">José A. Alonso Jiménez</a></td>
+ </tr>
+ <tr>
+  <td>Sevilla, 01 de marzo del 2025</td>
+ </tr>
+ <tr>
+  <td><i class="fa fa-cc"></i> Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/es/">Creative Commons</a>.</td>
+</tr>
+</div>
+</body>
+</html>
