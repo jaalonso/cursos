@@ -6,7 +6,7 @@
 <!-- 02 de marzo del 2025 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Programación declarativa (1999-00)</title>
+<title>Lógica y programación (1999-00)</title>
 <meta name="author" content="José A. Alonso" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -198,74 +198,83 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Programación declarativa (1999-00)</h1>
+<h1 class="title">Lógica y programación (1999-00)</h1>
 <p>
-Este curso ofrece una introducción completa a la programación lógica
-utilizando Prolog, centrándose en sus aplicaciones prácticas.
+El curso se estructura en tres partes. En la primera, se aborda la
+programación utilizando Common Lisp. En la segunda, se implementan
+sistemas de razonamiento basados en resolución con Common Lisp, además
+de desarrollar un intérprete de Prolog. Por último, en la tercera parte,
+se estudia el sistema de razonamiento Otter y se aplica para crear
+diversas aplicaciones.
 </p>
 
-<div id="outline-container-org31ae400" class="outline-2">
-<h2 id="org31ae400">Temas</h2>
-<div class="outline-text-2" id="text-org31ae400">
+<div id="outline-container-org5ecf4d3" class="outline-2">
+<h2 id="org5ecf4d3">Temas y códigos</h2>
+<div class="outline-text-2" id="text-org5ecf4d3">
 <ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-01.pdf">Tema 1: Introducción a Prolog</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-02.pdf">Tema 2: Listas, aritmética y operadores</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-03.pdf">Tema 3: Estructuras</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-04.pdf">Tema 4: Retroceso, corte y negación</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-05.pdf">Tema 5: Otros predicados predefinidos</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-06.pdf">Tema 6: Programación lógica de segundo orden</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-07.pdf">Tema 7: Estilo y eficiencia en programación lógica</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/temas/tema-08.pdf">Tema 8: Aplicaciones de la programación declarativa</a>.</li>
+<li>Programación funcional con Lisp:
+<ul class="org-ul">
+<li>Lisp 1: Funciones básicas de Lisp.</li>
+<li>Lisp 2: Predicados y condicionales.</li>
+<li>Lisp 3: Recursión.</li>
+<li>Lisp 4: Abstracción de datos.</li>
+<li>Lisp 5: Programación aplicativa.</li>
+<li>Lisp 6: Iteración.</li>
+<li>Lisp 7: Abstracción de procedimientos.</li>
+<li>Lisp 8: Escritura y lectura.</li>
+<li>Lisp 9: Listas de propiedades.</li>
+<li>Lisp 10: Estructuras.</li>
+<li>Lisp 11: Macro-procedimientos.</li>
+</ul></li>
+<li>Automatización del razonamiento:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-01.pdf">AR 1: Sintaxis y semántica proposicional</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-01.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-02.pdf">AR 2: Formas normales y cláusulas proposicionales</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-02.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-03.pdf">AR 3: El procedimiento de Davis y Putnam</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-03.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-04.pdf">AR 4: Resolución proposicional</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-04.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-05.pdf">AR 5: Refinamientos de resolución</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-06.pdf">AR 6: Programación lógica proposicional</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-06.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-07.pdf">AR 7: Programación lógica y Prolog</a> (<a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-07.lsp">Código</a>).</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-AR-08.pdf">AR 8: Implementación de Prolog</a>.</li>
+</ul></li>
+<li>Aplicaciones de los sistemas de razonamiento automático (SRA):
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-RA-01.pdf">SRA 1: Razonamiento automático con Otter</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lp-99/temas/lp-99-tema-RA-02.pdf">SRA 2: Aplicaciones de razonamiento automático con Otter</a>.</li>
+</ul></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org1bc0b06" class="outline-2">
-<h2 id="org1bc0b06">Problemas</h2>
-<div class="outline-text-2" id="text-org1bc0b06">
+<div id="outline-container-orgaecc35e" class="outline-2">
+<h2 id="orgaecc35e">Prácticas</h2>
+<div class="outline-text-2" id="text-orgaecc35e">
 <ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/problemas/prob-1-pd99.pdf">Relación 1</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/problemas/prob-2-pd99.pdf">Relación 2</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-0/practica-0.txt">Práctica 0: Emacs y Lisp (1ª parte)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-0/practica-0.lsp">Práctica 0: Emacs y Lisp (2ª parte)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-1/practica-1-1.lsp">Práctica 1: Tipo abstracto de datos de los polinomios (1ª parte)</a> y auxiliar (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-1/tema-04-1-r1.lsp">TAD de polinomios</a>).</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-1/practica-1-2.lsp">Práctica 1: Tipo abstracto de datos de los polinomios (2ª parte)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-1/practica-1-3.lsp">Práctica 1: Tipo abstracto de datos de los polinomios (3ª parte)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-1/practica-1-4.lsp">Práctica 1: Tipo abstracto de datos de los polinomios (4ª parte)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-2/practica-2.lsp">Práctica 2: Abstracción de procedimientos</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-3/practica-3.lsp">Práctica 3: Iteración</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lp-99/practicas/practica-4/practica-4.lsp">Práctica 4: El problema de las n-reinas en lógica proposicional</a>.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org9a1dddf" class="outline-2">
-<h2 id="org9a1dddf">Prácticas de laboratorio</h2>
-<div class="outline-text-2" id="text-org9a1dddf">
+<div id="outline-container-orgb1d0cc7" class="outline-2">
+<h2 id="orgb1d0cc7">Bibliografía</h2>
+<div class="outline-text-2" id="text-orgb1d0cc7">
 <ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-1/practica-0-pd99.txt">Práctica 0: Lynx, Emacs y Prolog (1ª parte)</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-1/practica-0-pd99.pro">Práctica 0: Lynx, Emacs y Prolog (2ª parte)</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-1/practica-1-pd99.pro">Práctica 1: Menú a la carta</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-2/practica-2-pd99.pro">Práctica 2: Listas</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-3/practica-3-pd99.pro">Práctica 3: Estructuras</a> y auxiliar (<a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-3/mensaje.dat">mensaje.dat</a>).</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/practica-4/practica-4-pd99.pro">Práctica 4: Orden superior</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/pd-99/practicas/examen/examen.pro">Examen de prácticas</a>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org00ff7fa" class="outline-2">
-<h2 id="org00ff7fa">Sistemas</h2>
-<div class="outline-text-2" id="text-org00ff7fa">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.swi-prolog.org">SWI Prolog</a>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org3f9d0d7" class="outline-2">
-<h2 id="org3f9d0d7">Bibliografía</h2>
-<div class="outline-text-2" id="text-org3f9d0d7">
-<ul class="org-ul">
-<li>Bratko, I. <i>Prolog Programming for Artificial Intelligence (2nd ed.)</i>  (Addison-Wesley, 1990)</li>
-<li>Clocksin, W.F. y Mellish, C.S. <i>Programación en Prolog</i>  (Gustavo Gili, 1987)</li>
-<li>Clocksin, W.F. y Mellish, C.S. <i>Programming in Prolog (Fourth Edition)</i>  (Springer Verlag, 1994)</li>
-<li>Deransart, P.; Ed-Dbali, A. y Cervoni, L. <i>Prolog: The Standard</i>  (Springer, 1996)</li>
-<li>Flach, P. <i>Simply Logical (Intelligent Reasoning by Example)</i>  (John Wiley, 1994)</li>
-<li>O'Keefe, R.A. <i>The Craft of Prolog</i>  (The MIT Press, 1990)</li>
-<li>Sterling,, L. y Shapiro, E. <i>The Art of Prolog (2nd editition)</i>  (The MIT Press, 1994)</li>
-<li>Van Le, T. <i>Techniques of Prolog Programming</i>  (John Wiley, 1993)</li>
+<li>Alonso, J.A. <a href="https://web.archive.org/web/20100402030516/http://www.cs.us.es/~jalonso/cursos/slc-96/slc-96.pdf">Lógica computacional</a> (Univ. de Sevilla, 1997).</li>
+<li>Alonso, J.A.; Fernández, A. y Pérez, M.J. <a href="https://web.archive.org/web/20100402030516/http://www.cs.us.es/~jalonso/publicaciones/1996-RA.pdf">Razonamiento automático</a> (Univ. Sevilla, 1996).</li>
+<li>Baj, F. <a href="https://web.archive.org/web/http://cbl.leeds.ac.uk/nikos/pail/logic/logic.html">Logic with PAIL</a> (June 25 1991).</li>
+<li>Genesereth, M.R. <a href="https://web.archive.org/web/20100402030516/http://logic.stanford.edu/classes/cs157/cs157.html">Computational logic</a> (Stanford University, 1999-00).</li>
+<li>Gordon, G.J. <a href="https://courses.cs.umbc.edu/331/resources/lisp/LISP-tutorial.htmlhttps://web.archive.org/web/20100402030516/http://www.cs.us.es/~jalonso/doc/tutorial-de-lisp.txt">Common Lisp hints</a>.</li>
+<li>Paulson, L.C. <a href="https://www.cl.cam.ac.uk/teaching/2002/LogicProof/notes.pdf">Logic and proof</a> (University of Cambridge, 1999).</li>
+<li>Shapiro, S.C. <a href="https://web.archive.org/web/20100402030516/http://www.cs.buffalo.edu/~shapiro/Reasoning/">Foundations of logic and inference</a> (Tutorial IJCAI, 1995).</li>
+<li>Steele, Guy L. <a href="https://web.archive.org/web/20100402030516/http://www.cs.us.es/~jalonso/doc/cltl/clm/clm.html">Common Lisp: the language (2nd edition)</a></li>
 </ul>
 </div>
 </div>
