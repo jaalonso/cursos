@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 26 de marzo del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Informática (2009-10)</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Informática (2009-10)</h1>
+<p>
+Este curso constituye una introducción a la programación mediante el
+enfoque de programación funcional con Haskell, así como al diseño y
+análisis de algoritmos y su aplicación en la resolución computacional de
+problemas matemáticos. Asimismo, se aborda el cálculo simbólico
+utilizando el sistema Maxima.
+</p>
+
+<p>
+Es una asignatura troncal del primer curso
+del <a href="https://web.archive.org/web/20091002092858/http://www.us.es/estudios/titulaciones/grados/plan_171">Grado en Matemáticas</a>
+de la <a href="https://web.archive.org/web/2009/http://www.us.es/">Universidad de Sevilla</a>.
+</p>
+
+<div id="outline-container-org0b74f4a" class="outline-2">
+<h2 id="org0b74f4a">Temas de "Informática (2009-10)"</h2>
+<div class="outline-text-2" id="text-org0b74f4a">
+<ul class="org-ul">
+<li>1ª parte: Programación funcional
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-1.pdf">Tema 1: Introducción a la programación funcional.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-2.pdf">Tema 2: Introducción a la programación con Haskell.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-3.pdf">Tema 3: Tipos y clases.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-4.pdf">Tema 4: Definición de funciones.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-5.pdf">Tema 5: Definiciones de listas por comprensión.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-6.pdf">Tema 6: Funciones recursivas.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-7.pdf">Tema 7: Razonamiento sobre programas.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-8.pdf">Tema 8: Funciones de orden superior.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-9.pdf">Tema 9: Declaraciones de tipos y clases.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-10.pdf">Tema 10: Evaluación perezosa.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-11.pdf">Tema 11: Analizadores funcionales.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-12.pdf">Tema 12: Programas interactivos.</a></li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-13.pdf">Tema 13: El problema de cifras y letras.</a></li>
+</ul></li>
+<li>2ª parte: Cálculo simbólico
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-14/tema_14.html">Tema 14: Introducción a Maxima</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-14/tema_14_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-15/tema_15.html">Tema 15: Funciones de una variable</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-15/tema_15_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-16/tema_16.html">Tema 16: Aritmética</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-16/tema_16_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-17/tema_17.html">Tema 17: Sucesiones y recursión</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-17/tema_17_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-18/tema_18.html">Tema 18: Programación</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-18/tema_18_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-19/tema_19.html">Tema 19: Matrices en Maxima</a> y <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-19/tema_19_ej.html">ejercicios</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-20/tema_20.html">Tema 20: Gráficos y animaciones.</a></li>
+</ul></li>
+<li>3ª parte: Diseño y análisis de algoritmos
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/tema-21.pdf">Tema 21: Algoritmos de exploración de grafos.</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org2f7b69a" class="outline-2">
+<h2 id="org2f7b69a">Libros con temas, ejercicios y exámenes</h2>
+<div class="outline-text-2" id="text-org2f7b69a">
+<ul class="org-ul">
+<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/temas/2009-10-IM-temas-PF.pdf">Temas de "Programación funcional"</a> se encuentran las transparencias de
+todos los temas de la primera parte del curso.</li>
+<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/ejercicios/ejercicios-I1M-2009.pdf">Ejercicios de “Informática de 1º de Matemáticas” (2009–10)</a> se
+encuentran todas las relaciones de ejercicios con sus soluciones.</li>
+<li>En <a href="https://web.archive.org/web/https://raw.githubusercontent.com/jaalonso/Examenes_de_PF_con_Haskell_Vol1/master/Libro/Examenes_de_PF_con_Haskell_Vol1.pdf">Exámenes de "Programación funcional con Haskell" Vol. 1 (Curso
+2009–2010)</a> se encuentran todos los exámenes con sus soluciones.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac99d4d" class="outline-2">
+<h2 id="orgac99d4d">Referencias</h2>
+<div class="outline-text-2" id="text-orgac99d4d">
+</div>
+<div id="outline-container-org4cd0b37" class="outline-3">
+<h3 id="org4cd0b37">Programación funcional con Haskell</h3>
+<div class="outline-text-3" id="text-org4cd0b37">
+</div>
+<div id="outline-container-org2da5255" class="outline-4">
+<h4 id="org2da5255">Manuales de referencia de Haskell</h4>
+<div class="outline-text-4" id="text-org2da5255">
+<ul class="org-ul">
+<li>J.A. Alonso. <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/doc/resumen_Haskell.pdf">Resumen de funciones de Haskell</a>.</li>
+<li>J. Bailey. <a href="https://web.archive.org/web/https://cheatsheet.codeslower.com/CheatSheet.pdf">Haskell cheat sheet.</a></li>
+<li>Haskell. <a href="https://web.archive.org/web/http://www.haskell.org/haskellwiki/Reference_card">Reference card</a>.</li>
+<li>B. Pope y A. van IJzendoorn. <a href="https://web.archive.org/web/http://www.cse.chalmers.se/edu/year/2019/course/TDA555/tourofprelude.html">A tour of the Haskell prelude</a>.</li>
+<li>A. van IJzendoorn. <a href="https://web.archive.org/web/https://cs.fit.edu/~ryan/cse4250/haskell-syntax.html">Tour of the Haskell syntax.</a></li>
+<li>M. Nic. <a href="https://web.archive.org/web/http://www.zvon.org/other/haskell/Outputglobal/">Haskell reference.</a></li>
+<li><a href="https://web.archive.org/web/https://hackage.haskell.org/package/base-4.16.0.0/docs/Prelude.html">Prelude.</a></li>
+<li><a href="https://web.archive.org/web/http://www.haskell.org/ghc/docs/latest/html/libraries/">Haskell Hierarchical Libraries.</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orged5cb4e" class="outline-4">
+<h4 id="orged5cb4e">Buscador de funciones de Haskell</h4>
+<div class="outline-text-4" id="text-orged5cb4e">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://www.haskell.org/hoogle/">Hoogle</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgafb1d9b" class="outline-4">
+<h4 id="orgafb1d9b">Libros y apuntes en la Red sobre Haskell</h4>
+<div class="outline-text-4" id="text-orgafb1d9b">
+<ul class="org-ul">
+<li>H.C. Cunningham. <a href="https://web.archive.org/web/http://john.cs.olemiss.edu/~hcc/csci555/notes/haskell_notes.pdf">Notes on functional programming with Haskell.</a></li>
+<li>Hal Daume III et al. <a href="https://web.archive.org/web/http://cholla.mmto.arizona.edu/computers/haskell/2018/daume02yaht.pdf">Yet another Haskell tutorial.</a></li>
+<li>J. Fokker. <a href="https://web.archive.org/web/http://ima.udg.edu/~villaret/fp-sp.pdf">Programación funcional.</a></li>
+<li>J. Gallardo, P. Gutiérrez y B. Ruiz. <a href="https://web.archive.org/web/http://www.lcc.uma.es/~blas/pfHaskell/gentle/">Una introducción agradable a Haskell versión 98</a> (es una traducción de P. Hudak, J. Peterson y J. Fasel <a href="https://web.archive.org/web/http://www.haskell.org/tutorial/">A Gentle Introduction to Haskell, Version 98</a>).</li>
+<li><a href="https://web.archive.org/web/http://en.wikibooks.org/wiki/Haskell">The Haskell wikibook.</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7fc9d0c" class="outline-4">
+<h4 id="org7fc9d0c">Ejercicios de Haskell</h4>
+<div class="outline-text-4" id="text-org7fc9d0c">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/http://haskell.org/haskellwiki/H-99:_Ninety-Nine_Haskell_Problems">H-99: Ninety-Nine Haskell Problems.</a></li>
+<li><a href="https://web.archive.org/web/http://www.haskell.org/haskellwiki/Haskell_Quiz">Haskell Quiz</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3978d4c" class="outline-4">
+<h4 id="org3978d4c">Cursos sobre programación funcional con Haskell</h4>
+<div class="outline-text-4" id="text-org3978d4c">
+<ul class="org-ul">
+<li>J.A. Alonso. <a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/pd-08">Programación declarativa (2008-09)</a>.</li>
+<li>J.E. Gallardo. <a href="https://web.archive.org/web/http://www.lcc.uma.es/~pepeg/declarativa/index.html">Programación declarativa - Haskell</a>.</li>
+<li>G. Hutton. <a href="https://web.archive.org/web/https://people.cs.nott.ac.uk/pszgmh/pgp.html">Functional programming</a>.</li>
+<li>P. Wadler. <a href="https://web.archive.org/web/20070605214359/www.inf.ed.ac.uk/teaching/courses/inf1/fp/">Informatics 1 – Functional programming</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3620398" class="outline-3">
+<h3 id="org3620398">Cálculo simbólico</h3>
+<div class="outline-text-3" id="text-org3620398">
+<ul class="org-ul">
+<li>J.A. Alonso. <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/i1m-09/doc/resumen_maxima.pdf">Resumen de funciones de Maxima</a>.</li>
+<li>J. Arántegui. <a href="https://web.archive.org/web/http://vimeo.com/channels/maximajaj">Introducción a Maxima</a>.</li>
+<li>R. Rodríguez. <a href="https://web.archive.org/web/http://www.eco.uva.es/boni/Maxima/Manual%20J%20R%20Rodriguez%20Galvan.pdf">Maxima con wxMaxima: software libre en el aula de matemáticas</a>.</li>
+<li>M. Rodríguez. <a href="https://web.archive.org/web/https://maxima.sourceforge.io/docs/tutorial/es/max.pdf">Primeros pasos en Maxima</a>.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr>
+<table border="0" align="right">
+ <tr>
+  <td><a href="https://jaalonso.github.io">José A. Alonso Jiménez</a></td>
+ </tr>
+ <tr>
+  <td>Sevilla, 26 de marzo del 2025</td>
+ </tr>
+ <tr>
+  <td><i class="fa fa-cc"></i> Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/es/">Creative Commons</a>.</td>
+</tr>
+</div>
+</body>
+</html>
