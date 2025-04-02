@@ -6,7 +6,7 @@
 <!-- 02 de abril del 2025 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Razonamiento automático (2010-11)</title>
+<title>Demostración asistida por ordenador (2010-11)</title>
 <meta name="author" content="José A. Alonso" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -198,115 +198,41 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">Razonamiento automático (2010-11)</h1>
+<h1 class="title">Demostración asistida por ordenador (2010-11)</h1>
 <p>
-Este curso ofrece una introducción al razonamiento automático usando el
-sistema <a href="https://web.archive.org/web/20250318182541/http://www.cl.cam.ac.uk/research/hvg/Isabelle">Isabelle/HOL</a>.
+Este curso constituye una introducción al uso del sistema Isabelle/HOL
+para la construcción y verificación de demostraciones
+formales. Exploraremos su aplicación en dos áreas fundamentales: el
+razonamiento sobre programas funcionales y la deducción natural en los
+sistemas lógicos proposicional y de primer orden.
 </p>
 
 <p>
-La asignatura forma parte del
-<a href="https://web.archive.org/web/2011/http://master.cs.us.es/index.php5/M%C3%A1ster_Universitario_en_L%C3%B3gica%2C_Computaci%C3%B3n_e_Inteligencia_Artificial">Máster Universitario en Lógica, Computación e Inteligencia Artificial</a>
-impartido por el <a href="https://web.archive.org/web/2011/http://www.cs.us.es/">Departamento de Ciencias de la Computación e Inteligencia Artificial</a>
-de la <a href="https://web.archive.org/web/2011/http://www.us.es/">Universidad de Sevilla</a>.
+Desde el punto de vista administrativo, este curso forma parte de la
+oferta académica
+del <a href="https://web.archive.org/web/2010/http://www.cfp.us.es/">Centro de Formación Permanente de la Universidad de Sevilla</a>,
+específicamente como un <a href="https://web.archive.org/web/20250225123832/https://cfp.us.es/cursos/fe/demostracion-asistida-por-ordenador/944/?basica=1">curso de formación especializada</a>.
 </p>
 
-<div id="outline-container-org0829e2d" class="outline-2">
-<h2 id="org0829e2d">Temas</h2>
-<div class="outline-text-2" id="text-org0829e2d">
+<div id="outline-container-orgc052592" class="outline-2">
+<h2 id="orgc052592">Temas</h2>
+<div class="outline-text-2" id="text-orgc052592">
 <ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-0.pdf">Tema 0: Presentación del razonamiento automático</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-1.pdf">Tema 1: Isabelle como un lenguaje funcional</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-2.pdf">Tema 2: El lenguaje de demostracion Isar</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-3.pdf">Tema 3: Distinción de casos e inducción</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-4.pdf">Tema 4: Patrones de demostración</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-5.pdf">Tema 5: Heurísticas para la inducción y recursión general</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-6.pdf">Tema 6: Caso de estudio: Corrección de un compilador</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/tema-7.pdf">Tema 7: Conjuntos, funciones y relaciones</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_1:_Isabelle_como_un_lenguaje_funcional">Tema 1: Isabelle como un lenguaje funcional</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_2:_Razonamiento_sobre_programas">Tema 2: Razonamiento sobre programas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_3:_Deducci%C3%B3n_l%C3%B3gica_proposicional_con_Isabelle">Tema 3: Deducción lógica proposicional con Isabelle</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_4:_Deducci%C3%B3n_natural_en_l%C3%B3gica_de_primer_orden_con_Isabelle">Tema 4: Deducción natural en lógica de primer orden con Isabelle</a>.</li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orgc8880ad" class="outline-2">
-<h2 id="orgc8880ad">Apuntes y códigos</h2>
-<div class="outline-text-2" id="text-orgc8880ad">
+<div id="outline-container-org6764b3d" class="outline-2">
+<h2 id="org6764b3d">Ejercicios</h2>
+<div class="outline-text-2" id="text-org6764b3d">
 <ul class="org-ul">
-<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/IDAO.pdf">Introducción a la demostración asistida por ordenador (con Isabelle/Isar)</a>
-se encuentra un libro con los apuntes del curso.</li>
-<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/teorias.tgz">teorias.tgz</a> se encuentra el código de todas las teorías.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org3ce39b1" class="outline-2">
-<h2 id="org3ce39b1">Ejercicios</h2>
-<div class="outline-text-2" id="text-org3ce39b1">
-</div>
-<div id="outline-container-orgabbb174" class="outline-3">
-<h3 id="orgabbb174">Ejercicios resueltos</h3>
-<div class="outline-text-3" id="text-orgabbb174">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Deducci%C3%B3n_natural_en_l%C3%B3gica_proposicional_con_Isabelle/Isar">Deducción natural en lógica proposicional con Isabelle/Isar</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Deducci%C3%B3n_natural_en_l%C3%B3gica_de_primer_orden_con_Isabelle/Isar">Deducción natural en lógica de primer orden con Isabelle/Isar</a>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgc9e21d2" class="outline-3">
-<h3 id="orgc9e21d2">Ejercicios de deducción natural</h3>
-<div class="outline-text-3" id="text-orgc9e21d2">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_1">Relación 1: Deducción natural en lógica proposicional</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_2">Relación 2: Deducción natural en lógica de primer orden</a>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgc4e55bb" class="outline-3">
-<h3 id="orgc4e55bb">Razonamiento por inducción sobre listas</h3>
-<div class="outline-text-3" id="text-orgc4e55bb">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_3">Relación 3: Cons inverso y cuantificadores sobre listas</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_4">Relación 4: Sustitución, inversión y eliminación</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_5">Relación 5: Menor posición válida</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_6">Relación 6: Número de elementos válidos</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_7">Relación 7: Contador de occurrencias</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_8">Relación 8: Suma y aplanamiento de listas</a>.</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgf291721" class="outline-3">
-<h3 id="orgf291721">Ejercicios complementarios</h3>
-<div class="outline-text-3" id="text-orgf291721">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_9">Relación 9: Deducción natural en lógica proposicional</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_10">Relación 10: Deducción natural en lógica de primer orden</a>.</li>
-<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2010/index.php/Rel_11">Relación 11: Razonamiento sobre programas</a>.</li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orga48b689" class="outline-2">
-<h2 id="orga48b689">Bibliografía</h2>
-<div class="outline-text-2" id="text-orga48b689">
-<ul class="org-ul">
-<li>J.A. Alonso. <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/m-ra-10/temas/IDAO.pdf">Introducción a la demostración asistida por ordenador (con Isabelle/HOL)</a>. (Universidad de Sevilla, 2010).</li>
-<li>M. Davis. <a href="https://lawrencecpaulson.github.io/papers/Early-History-of-ATP.pdf">The early history of automated deduction</a>.</li>
-<li>D. MacKenzie <a href="https://web.archive.org/web/20250318182600/https://backspaces.net/temp/Spring2010Seminar/18%20unconventional%20essays%20on%20the%20nature%20of%20mathematics.pdf#page=147">Computers and the sociology of mathematical proof</a>.</li>
-<li>G. Kolata. <a href="http://www.nytimes.com/library/cyber/week/1210math.html">Computer math proof shows reasoning power</a>. (The New York Times, 10 de diciembre de 1996).</li>
-<li>T. Nipkow, L.C. Paulson, M. Wenzel. <a href="https://web.archive.org/web/20070206094840/http://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/Isabelle/doc/tutorial.pdf">A proof assistant for Higher-Order Logic</a>.</li>
-<li>G. Sutcliffe. <a href="https://tptp.org/UserDocs/OverviewOfATP.html">What is automated theorem proving?</a></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgd8c550e" class="outline-2">
-<h2 id="orgd8c550e">Sistemas</h2>
-<div class="outline-text-2" id="text-orgd8c550e">
-<ul class="org-ul">
-<li><a href="https://web.archive.org/web/20100924172130/https://www.cl.cam.ac.uk/research/hvg/Isabelle/">Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Rel_1">Relación 1: Razonamiento sobre programas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_3_ej">Relación 2: Deducción natural proposicional con Isabelle</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/DAO2011/index.php/Tema_4_ej">Relación 3: Deducción natural en lógica de primer orden con Isabelle</a>.</li>
 </ul>
 </div>
 </div>
