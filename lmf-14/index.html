@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 28 de junio del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lógica matemática y fundamentos (2014-15)</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Lógica matemática y fundamentos (2014-15)</h1>
+<p>
+El curso "Lógica matemática y fundamentos" ofrece una introducción a los
+sistemas lógicos clásicos, estructurándose en dos bloques temáticos. El
+primer bloque se dedica a la <b>lógica proposicional</b>, donde se abordan su
+sintaxis y semántica, y se exploran diversos sistemas deductivos y de
+decisión como la deducción natural, los tableros semánticos, las formas
+normales y el principio de resolución, culminando con el estudio de
+algoritmos para el problema de la satisfacibilidad (SAT). A
+continuación, se estudia la <b>lógica de primer orden</b>, extendiendo los
+conceptos previos de sintaxis, semántica y los métodos de prueba a este
+lenguaje más expresivo, e introduciendo temas específicos como las formas
+normales de Skolem, los modelos de Herbrand y la resolución de primer
+orden. Un componente distintivo del curso es su enfoque práctico, que
+exige la implementación computacional de los conceptos teóricos mediante
+el lenguaje de <b>programación funcional Haskell</b> y el uso del ^*asistente de
+demostración Isabelle/HOL* para la construcción de pruebas formales,
+dotando así al estudiante de una comprensión profunda que integra el
+fundamento teórico con la aplicación en la formalización y
+automatización del razonamiento.
+</p>
+
+<p>
+Se trata de una asignatura del tercer año del del <a href="https://web.archive.org/web/2014/http://www.us.es/estudios/grados/plan_171?p=7">Grado en Matemáticas</a>
+de la <a href="https://web.archive.org/web/2014/http://www.us.es/">Universidad de Sevilla</a>.
+</p>
+
+<div id="outline-container-org94117be" class="outline-2">
+<h2 id="org94117be">Temas de "Lógica matemática y fundamentos" (2014-15)</h2>
+<div class="outline-text-2" id="text-org94117be">
+<ul class="org-ul">
+<li>Lógica proposicional:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-1.pdf">Tema 1: Sintaxis y semántica de la lógica proposicional</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-2.pdf">Tema 2: Deducción natural proposicional</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/LMF2015/index.php/Tema_2">Tema 2a: Deducción natural proposicional con Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-3.pdf">Tema 3: Tableros semánticos proposicionales</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-4.pdf">Tema 4: Formas normales</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-5.pdf">Tema 5: Resolución proposicional</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-6.pdf">Tema 6: Algoritmos para SAT. Aplicaciones</a> y <a href="https://web.archive.org/web/20250304093525/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-6-codigo.zip">códigos</a>.</li>
+</ul></li>
+<li>Lógica de primer orden:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-7.pdf">Tema 7: Sintaxis y semántica de la lógica de primer orden</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-8.pdf">Tema 8: Deducción natural en lógica de primer orden</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/LMF2015/index.php/Tema_8">Tema 8a: Deducción natural en lógica de primer orden con Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-9.pdf">Tema 9: Tableros semánticos en lógica de primer orden</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-10.pdf">Tema 10: Formas normales de Skolem y cláusulas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-11.pdf">Tema 11: Modelos de Herbrand</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/tema-12.pdf">Tema 12: Resolución en lógica de primer orden</a>.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org4fc5cf8" class="outline-2">
+<h2 id="org4fc5cf8">Prácticas</h2>
+<div class="outline-text-2" id="text-org4fc5cf8">
+</div>
+<div id="outline-container-orgac67969" class="outline-3">
+<h3 id="orgac67969">Relaciones de ejercicios</h3>
+<div class="outline-text-3" id="text-orgac67969">
+<ul class="org-ul">
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/8/82/Rel_1.hs">Relación 1a: Iniciación a la programación con Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R2">Relación 2: Representación del conocimiento proposicional</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/d/de/SintaxisSemantica.hs">Relación 2a: Sintaxis y semántica de la lógica proposicional en Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R2b">Relación 2b: Sintaxis y semántica de la Lógica proposicional</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/Rel_3">Relación 3: Deducción natural proposicional con Isabelle/HOL</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/Rel_4">Relación 4: Deducción natural en lógica de primer con Isabelle/HOL</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/Rel_5">Relación 5: Formalización de argumentos en lógica de primer orden</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/Relaci%C3%B3n_5_(resuelta)">Relación 5: Argumentación en lógica de primer orden</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R6">Relación 6: Sintaxis y semántica de la lógica de primer orden</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/9/9d/TablerosSemanticos.hs">Relación 7: Tableros semánticos proposicionales en Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R8">Relación 8: Cuestiones sobre tableros semánticos</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/1/15/FormasNormales.hs">Relación 9: Formas normales en lógica proposicional en Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R10">Relación 10: Cuestiones</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/0/02/Clausulas.hs">Relación 11: Cláusulas proposicionales en Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/images/b/b4/ResolucionProposicional.hs">Relación 12: Resolución proposicional en Haskell</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R13">Relación 13: Cuestiones</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R14">Relación 14: Argumentación y deducción natural en lógica de primer orden</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R15">Relación 15: Tableros semánticos en lógica de primer orden</a>.</li>
+<li><a href="https://www.glc.us.es/~jalonso/LMF2015/index.php/R16">Relación 16: Resolución en lógica de primer orden</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org403e1e5" class="outline-3">
+<h3 id="org403e1e5">Exámenes</h3>
+<div class="outline-text-3" id="text-org403e1e5">
+<ul class="org-ul">
+<li>Examen del 3 de septiembre de 2015:
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/examenes/2014-15/examen_4-3_sep.pdf">Ejercicios 1 a 3</a></li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/LMF2015/index.php/Ejercicio_4_(b)">Ejercicio 4</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/LMF2015/index.php/Ejercicio_5_(b)">Ejercicio 5</a></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7d2fa40" class="outline-2">
+<h2 id="org7d2fa40">Libros con los temas, ejercicios y exámenes</h2>
+<div class="outline-text-2" id="text-org7d2fa40">
+<ul class="org-ul">
+<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/temas-LMF-2014-15.pdf">Temas de "Lógica matemática y fundamentos" (2014-15)</a> se encuentran
+las transparencias de todo el curso en forma de libro.</li>
+<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/ejercicios-LMF-2014-15.pdf">Ejercicios de "Lógica matemática y fundamentos" (2014-15)</a> se
+encuentran los ejercicios de todo el curso en forma de libro.</li>
+<li>En <a href="https://web.archive.org/web/https://www.cs.us.es/~jalonso/cursos/lmf-14/temas/ej-argumentacion.pdf">50 ejercicios de argumentación</a> se encuentran los enunciados de los
+ejercicios de formalización de argumentos.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0e26753" class="outline-2">
+<h2 id="org0e26753">Bibliografía</h2>
+<div class="outline-text-2" id="text-org0e26753">
+<ul class="org-ul">
+<li>M. Ben-Ari. <a href="https://books.google.com/books?id=K24QBwAAQBAJ">Mathematical logic for computer science</a>. (Springer, 2001).</li>
+<li>I. Bratko. <a href="https://books.google.com/books?id=jezufm2Ly5YC">Prolog programming for artificial intelligence (3 ed.)</a>. (Addison Wesley, 2001).</li>
+<li>K. Broda, S. Eisenbach, H. Khoshnevisan y S. Vickers. <a href="https://web.archive.org/web/20120629193643/http://pubs.doc.ic.ac.uk/reasoned-programming/reasoned-programming.pdf">Reasoned programming</a>. (Imperial College, 1994).</li>
+<li>M. Fitting. <a href="https://books.google.nl/books?id=nYN0dBrCpmMC">First-order logic and automated theorem proving</a>. (Springer, 1996).</li>
+<li>J.H. Gallier. <a href="https://books.google.com/books?id=6VV1CAAAQBAJ">Logic for computer science (Foundations of automatic theorem proving)</a>. (Wiley, 1986).</li>
+<li>M.R. Genesereth y N.J. Nilsson. <a href="https://books.google.com/books?id=nFktBAAAQBAJ">Logical foundations of artificial intelligence</a>. (Morgan Kaufmann, 1987).</li>
+<li>C. Hall y J. O'Donnell <a href="https://books.google.com/books?id=QZgKCAAAQBAJ">Discrete mathematics using a computer</a>. (Springer, 2000).</li>
+<li>M. Huth y M. Ryan. <a href="https://books.google.com/books?id=eUggAwAAQBAJ">Logic in computer science: Modelling and reasoning about systems</a> (Cambridge University Press, 2000). Incluye el <a href="https://web.archive.org/web/20250223111542/http://www.cs.bham.ac.uk/research/lics/tutor/index.html">tutor en la Red</a>.</li>
+<li>A. Nerode y R.A. Shore. <a href="https://books.google.com/books?id=OKHZnyJkb4kC">Logic for applications</a>. (Springer, 1997).</li>
+<li>L. Paulson. <a href="https://web.archive.org/web/20250223111542/http://www.cl.cam.ac.uk/Teaching/2002/LogicProof/notes.pdf">Logic and proof</a> (U. Cambridge, 2003).</li>
+<li>S. Reeves y M. Clarke <a href="https://www.cs.ru.nl/~herman/onderwijs/soflp2013/reeves-clarke-lcs.pdf">Logic for computer science</a>. (Addison-Wesley 1990 &amp; 2003).</li>
+<li>U. Schöning. <a href="https://books.google.com/books?id=NYI_AAAAQBAJ">Logic for computer scientists</a>. (Birkäuser, 1989).</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr>
+<table border="0" align="right">
+ <tr>
+  <td><a href="https://jaalonso.github.io">José A. Alonso Jiménez</a></td>
+ </tr>
+ <tr>
+  <td>Sevilla, 28 de junio del 2025</td>
+ </tr>
+ <tr>
+  <td><i class="fa fa-cc"></i> Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/es/">Creative Commons</a>.</td>
+</tr>
+</div>
+</body>
+</html>
