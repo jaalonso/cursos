@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 29 de junio del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Razonamiento automático (2014-15)</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="../../css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Razonamiento automático (2014-15)</h1>
+<p>
+El curso "Razonamiento automático (2014-15)" ofrece una introducción al
+razonamiento formal y la verificación de programas utilizando
+Isabelle/HOL. A lo largo del curso, se abordan temas fundamentales
+como la programación funcional en Isabelle, el razonamiento sobre
+programas (incluyendo casos de estudio como la ordenación por inserción
+y mezcla), la deducción natural (tanto proposicional como de primer
+orden), conceptos avanzados como conjuntos inductivos, gramáticas libres
+de contexto y razonamiento modular, así como aplicaciones prácticas como
+la resolución de sudokus. Además, el curso incluye una serie de
+relaciones de ejercicios que permiten profundizar en la formalización,
+automatización y verificación de propiedades en entornos de demostración
+asistida.
+</p>
+
+<p>
+La asignatura forma parte del
+<a href="https://web.archive.org/web/2015/http://master.cs.us.es/index.php5/M%C3%A1ster_Universitario_en_L%C3%B3gica%2C_Computaci%C3%B3n_e_Inteligencia_Artificial">Máster Universitario en Lógica, Computación e Inteligencia Artificial</a>
+impartido por el <a href="https://web.archive.org/web/2015/http://www.cs.us.es/">Departamento de Ciencias de la Computación e Inteligencia Artificial</a>
+de la <a href="https://web.archive.org/web/2015/http://www.us.es/">Universidad de Sevilla</a>.
+</p>
+
+<div id="outline-container-orgcfe5659" class="outline-2">
+<h2 id="orgcfe5659">Temas</h2>
+<div class="outline-text-2" id="text-orgcfe5659">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_1:_Programaci%C3%B3n_funcional_en_Isabelle">Tema 1: Programación funcional en Isabelle</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/i1m-14/temas/tema-8t.pdf">Tema 2a: Razonamiento sobre programas Haskell</a></li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_2b:_Razonamiento_autom%C3%A1tico_sobre_programas_en_Isabelle/HOL">Tema 2b: Razonamiento automático sobre programas en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_3:_Razonamiento_estructurado_sobre_programas_en_Isabelle/HOL">Tema 3: Razonamiento estructurado sobre programas en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_4:_Razonamiento_por_casos_y_por_inducci%C3%B3n">Tema 4: Razonamiento por casos y por inducción</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_5a:_Verificaci%C3%B3n_de_la_ordenaci%C3%B3n_por_inserci%C3%B3n">Tema 5a: Verificación de la ordenación por inserción</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_5b:_Verificaci%C3%B3n_de_la_ordenaci%C3%B3n_por_mezcla">Tema 5b: Verificación de la ordenación por mezcla</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_6:_Caso_de_estudio:_Compilaci%C3%B3n_de_expresiones">Tema 6: Caso de estudio: Compilación de expresiones</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/li-14/temas/tema-2.pdf">Tema 7a: Deducción natural proposicional</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_7b:_Deducci%C3%B3n_natural_proposicional_con_Isabelle/HOL">Tema 7b: Deducción natural proposicional con Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/http://www.cs.us.es/~jalonso/cursos/li-14/temas/tema-8.pdf">Tema 8a: Deducción natural en lógica de primer orden</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_8b:_Deducci%C3%B3n_natural_en_l%C3%B3gica_de_primer_orden_con_Isabelle/HOL">Tema 8b: Deducción natural en lógica de primer orden con Isabelle/HOL</a></li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_9:_Conjuntos,_funciones_y_relaciones">Tema 9: Conjuntos, funciones y relaciones</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_10:_Conjuntos_definidos_inductivamente">Tema 10: Conjuntos definidos inductivamente</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_11:_Gram%C3%A1ticas_libre_de_contexto">Tema 11: Gramáticas libre de contexto</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_12a:_Razonamiento_modular_(Teor%C3%ADa_de_grupos)">Tema 12a: Razonamiento modular (Teoría de grupos)</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_12b:_Razonamiento_modular">Tema 12b: Razonamiento modular</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_12c:_Automatizaci%C3%B3n">Tema 12c: Automatización</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_12d:_Pasos_elementales">Tema 12d: Pasos elementales</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/Tema_12e:_Sudoku">Tema 12e: Sudoku</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org750c5f5" class="outline-2">
+<h2 id="org750c5f5">Ejercicios</h2>
+<div class="outline-text-2" id="text-org750c5f5">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R1">Relación 1: Programación funcional en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R2">Relación 2: Razonamiento automático sobre programas en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R3">Relación 3: Razonamiento estructurado sobre programas en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R4">Relación 4: Cons inverso</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R5">Relación 5: Cuantificadores sobre listas</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R6">Relación 6: Sustitución, inversión y eliminación</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R7">Relación 7: Recorridos de árboles</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R8">Relación 8: Árboles binarios completos</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R9">Relación 9: Deducción natural en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R10">Relación 10: Formalización y argumentación en Isabelle/HOL</a>.</li>
+<li><a href="https://web.archive.org/web/https://www.glc.us.es/~jalonso/RA2014/index.php/R11">Relación 11: Plegados de listas y de árboles</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb2300b" class="outline-2">
+<h2 id="orgeb2300b">Bibliografía</h2>
+<div class="outline-text-2" id="text-orgeb2300b">
+</div>
+<div id="outline-container-org86887b6" class="outline-3">
+<h3 id="org86887b6">Visiones generales de la DAO</h3>
+<div class="outline-text-3" id="text-org86887b6">
+<ul class="org-ul">
+<li>J.A. Alonso. <a href="https://www.glc.us.es/~jalonso/vestigium/razonamiento-formalizado-del-sueno-a-la-realidad-de-las-pruebas/">Razonamiento formalizado: Del sueño a la realidad de las pruebas</a>. <i>Vestigium</i>, 26 de diciembre de 2012.</li>
+<li>J. Avigad. <a href="https://web.archive.org/web/20250225153524/http://www.andrew.cmu.edu/user/avigad/Talks/icerm.pdf">Interactive theorem proving, automated reasoning, and mathematical computation</a>. ICERM, 14 de diciembre de 2012.</li>
+<li>M. Davis. <a href="https://lawrencecpaulson.github.io/papers/Early-History-of-ATP.pdf">The early history of automated deduction</a>.</li>
+<li>J.P. Delahaye <a href="https://interstices.info/du-reve-a-la-realite-des-preuves/https://web.archive.org/web/20250225153524/http://interstices.info/jcms/int_63417/du-reve-a-la-realite-des-preuves">Du rêve à la réalité des preuves</a>. <i>Interstices</i>, 8 de julio de 2012.</li>
+<li>J. Germoni <a href="https://images-des-maths.pages.math.cnrs.fr/freeze/Coq-et-caracteres.html">Coq et caractères: Preuve formelle du théorème de Feit et Thompson</a>. <i>Images des Mathématiques</i>, CNRS, 23 de noviembre de 2012.</li>
+<li>H. Geuvers <a href="https://www.cs.ru.nl/~herman/PUBS/proofassistants.pdf">Proof assistants: History, ideas and future</a>. <i>Sadhana</i>, Vol. 34-1, pp. 3-25, février 2009.</li>
+<li>G. Gonthier <a href="http://www.ams.org/notices/200811/tx081101382p.pdf">The four-color theorem</a>. <i>Notices of the AMS</i>, Vol. 55, n° 11, pp. 1382-1393, 2008.</li>
+<li>T. Hales. <a href="http://www.ams.org/notices/200811/tx081101370p.pdf">Formal proof</a>. <i>Notices of AMS</i>, Vol. 55, N. 11 (2008) pp. 1370-1380.</li>
+<li>J. Harrison. <a href="https://www.cl.cam.ac.uk/~jrh13/papers/ab.pdf">A short survey of automated reasoning</a>. <i>Lecture Notes in Computer Science</i>, Vol. 4545, pp. 334-349, 2007.</li>
+<li>J. Harrison. <a href="http://www.ams.org/notices/200811/tx081101395p.pdf">Formal proof: Theory and practice</a>. <i>Notices of the AMS</i>, Vol. 55, N. 11 (2008) p.1395-1406.</li>
+<li>G. Kolata. <a href="http://www.nytimes.com/library/cyber/week/1210math.html">Computer math proof shows reasoning power</a>. <i>The New York Times</i>, 10 de diciembre de 1996.</li>
+<li>D. MacKenzie <a href="https://www.scienceopen.com/hosted-document?doi=10.14236/ewic/NFM1998.13">Computers and the sociology of mathematical proof</a>.</li>
+<li>G. Sutcliffe. <a href="https://www.cs.miami.edu/home/geoff/Courses/CSC545-08S/Content/WhatIsATP.shtml">What is automated theorem proving?</a>.</li>
+<li>F. Wiedijk <a href="http://www.cs.ru.nl/~freek/100/">Formalizing the «top 100» of mathematical theorems</a>.</li>
+<li>F. Wiedijk <a href="http://www.ams.org/notices/200811/tx081101408p.pdf">Formal proof - Getting started</a>. <i>Notices of the AMS</i>, Vol. 55, n° 11, pp. 1408-1414, 2008.</li>
+<li>F. Wiedijk, <a href="https://www.cs.ru.nl/F.Wiedijk/pubs/qed2.pdf">The QED manifesto revisited</a>. <i>Studies in Logic, Grammar and Rhetoric</i>, Vol. 10(23), pp. 121-133, 2007.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd5d4b2a" class="outline-3">
+<h3 id="orgd5d4b2a">Referencias sobre Isabelle/HOL</h3>
+<div class="outline-text-3" id="text-orgd5d4b2a">
+<ul class="org-ul">
+<li>B. Grechuk <a href="https://web.archive.org/web/20250225153524/https://web.cs.wpi.edu/~dd/resources_isabelle/isabelle_primer_mathematicians.pdf">Isabelle primer for mathematicians</a>.</li>
+<li>T. Nipkow <a href="https://web.archive.org/web/20250225153524/https://isabelle.in.tum.de/doc/prog-prove.pdf">Programming and proving in Isabelle/HOL</a>.</li>
+<li>T. Nipkow, M. Wenzel y L.C. Paulson <a href="https://web.archive.org/web/20250225153524/https://isabelle.in.tum.de/website-Isabelle2009/dist/Isabelle/doc/tutorial.pdf">A proof assistant for higher-order logic</a>.</li>
+<li><a href="https://web.archive.org/web/20250225153524/http://www.cl.cam.ac.uk/research/hvg/Isabelle/dist/library/HOL/HOL/document.pdf">Isabelle/HOL — Higher-Order Logic</a>.</li>
+<li><a href="https://web.archive.org/web/20250225153524/http://www.cl.cam.ac.uk/research/hvg/Isabelle/documentation.html">Tutorials and manuals for Isabelle</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org552030d" class="outline-3">
+<h3 id="org552030d">Lecturas complementarias</h3>
+<div class="outline-text-3" id="text-org552030d">
+</div>
+<div id="outline-container-orgc0d6d6c" class="outline-4">
+<h4 id="orgc0d6d6c">Programación funcional</h4>
+<div class="outline-text-4" id="text-orgc0d6d6c">
+<ul class="org-ul">
+<li>J.A. Alonso <a href="https://web.archive.org/web/20250225153524/http://www.cs.us.es/~jalonso/cursos/i1m-12/temas/2012-13-IM-temas-PF.pdf">Temas de "Programación funcional"</a>. Publicaciones del Grupo de Lógica Computacional. Universidad de Sevilla, 2012.</li>
+<li>J.A. Alonso y M.J. Hidalgo <a href="https://web.archive.org/web/20250225153524/http://www.cs.us.es/~jalonso/publicaciones/Piensa_en_Haskell.pdf">Piensa en Haskell (Ejercicios de programación funcional con Haskell)</a>. Publicaciones del Grupo de Lógica Computacional. Universidad de Sevilla, 2012.</li>
+<li>G. Hutton <a href="https://books.google.com/books?id=olp7lAtpRX0C">Programming in Haskell</a>. Cambridge University Press, 2007.</li>
+<li>M. Lipovača <a href="https://web.archive.org/web/20250225153524/http://aprendehaskell.es/">¡Aprende Haskell por el bien de todos!</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc7d3e28" class="outline-4">
+<h4 id="orgc7d3e28">Lógica computacional</h4>
+<div class="outline-text-4" id="text-orgc7d3e28">
+<ul class="org-ul">
+<li>J.A. Alonso <a href="https://web.archive.org/web/20250225153524/http://www.cs.us.es/~jalonso/cursos/li-12/temas/temas-LI-2012-13.pdf">Temas de "Lógica informática" (2012-13)</a>. Publicaciones del Grupo de Lógica Computacional. Universidad de Sevilla, 2012.</li>
+<li>R. Bornat <a href="https://books.google.com/books?id=yv9QEAAAQBAJ">Proof and disproof in formal logic: an introduction for programmers</a>. Oxford University Press, 2005.</li>
+<li>K. Broda, S. Eisenbach, H. Khoshnevisan y S. Vickers <a href="https://web.archive.org/web/20250225153524/https://www.doc.ic.ac.uk/~susan/firstyearbook.pdf">Reasoned programming</a>. Imperial College, 1994.</li>
+<li>K. Doets y J. van Eijck <a href="https://books.google.com/books?id=YCC6lwEACAAJ">The Haskell road to logic, maths and programming</a>.</li>
+<li>M. Huth y M. Ryan <a href="https://books.google.com/books?id=eUggAwAAQBAJ">Logic in computer science: Modelling and reasoning about systems</a>. Cambridge University Press, 2004. (Incluye el <a href="https://web.archive.org/web/20250225153524/http://www.cs.bham.ac.uk/research/lics/tutor/index.html">tutor en la Red</a>).</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org2cb7a77" class="outline-3">
+<h3 id="org2cb7a77">Cursos relacionados</h3>
+<div class="outline-text-3" id="text-org2cb7a77">
+</div>
+<div id="outline-container-orgdc6ba5e" class="outline-4">
+<h4 id="orgdc6ba5e">Cursos con Isabelle/HOL</h4>
+<div class="outline-text-4" id="text-orgdc6ba5e">
+<ul class="org-ul">
+<li>Clemens Ballarin y Gerwin Klein <a href="https://web.archive.org/web/20250225153524/http://isabelle.in.tum.de/coursematerial/IJCAR04">Introduction to the Isabelle proof assistant</a>. (en el IJCAR-2004).</li>
+<li>A.D. Brucker, D. Basin, J.G. Smaus y B. Wolff. <a href="https://web.archive.org/web/20250225153524/http://archiv.infsec.ethz.ch/education/permanent/csmr.html">Computer-supported modeling and reasoning</a>. (ETH Zurich, 2011).</li>
+<li>Mads Dam. <a href="https://web.archive.org/web/20250225153524/http://www.csc.kth.se/utbildning/kth/kurser/DD2453/aform07/">Advanced formal methods</a>. (KTH Royal Institute of Technology, 2007).</li>
+<li>Jacques Fleuriot y Paul Jackson. <a href="https://web.archive.org/web/20250225153524/http://www.inf.ed.ac.uk/teaching/courses/ar/slides/">Automated reasoning</a>. (Univ. de Edimburgo, 2012-13).</li>
+<li>Thomas Genet <a href="https://web.archive.org/web/20250225153524/http://www.irisa.fr/celtique/genet/ACF">Software formal analysis and design</a>. (Univ. de Rennes)</li>
+<li>Gerwin Klein. <a href="https://web.archive.org/web/20250225153524/http://www.cse.unsw.edu.au/~kleing/teaching/thprv-04">Theorem proving - Principles, techniques, applications</a>. (NICTA, 2004).</li>
+<li>Gerwin Klein. <a href="https://web.archive.org/web/20250225153524/http://www.cse.unsw.edu.au/~cs4161/index.html">Advanced topics in software verification</a>. (NICTA, 2012).</li>
+<li>Joao Marcos. <a href="https://web.archive.org/web/20250225153524/http://www.dimap.ufrn.br/~jmarcos/courses/LC/Ementa.htm">Lógica computacional: Demonstração assistida e semi-automática de teoremas</a>.(UFRN, 2000).</li>
+<li>Tobias Nipkow. <a href="https://web.archive.org/web/20250225153524/https://www21.in.tum.de/teaching/semantics/WS1920/">Semantics of programming languages</a>. (Univ. de Munich, 2012-13).</li>
+<li>Tobias Nipkow <a href="https://web.archive.org/web/20250225153524/http://isabelle.in.tum.de/coursematerial/PSV2009-1">Theorem proving with Isabelle/HOL: an intensive course</a>.</li>
+<li>Larry Paulson. <a href="https://web.archive.org/web/20250225153524/http://www.cl.cam.ac.uk/teaching/0910/L21/">Interactive formal verification</a>. (Univ. de Cambridge, 2009-10).</li>
+<li>Jan-Georg Smaus. <a href="https://web.archive.org/web/20250225153524/http://www.informatik.uni-freiburg.de/~ki/teaching/ws0910/csmr/lecture.html">Computer-supported modeling and reasoning</a>. (Univ. de Feiburgo, 2009).</li>
+<li>Christian Sternagel <a href="https://web.archive.org/web/20250225153524/http://cl-informatik.uibk.ac.at/teaching/ss11/eve/content.php">Experiments in verification – Introduction to Isabelle/HOL</a>. (Univ. de Innsbruck, 2011-12).</li>
+<li>Tjark Weber. <a href="https://web.archive.org/web/20250225153524/http://www.cl.cam.ac.uk/teaching/1011/L21/">Interactive formal verification</a>. (Univ. de Cambridge, 2010-11).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org737e41f" class="outline-4">
+<h4 id="org737e41f">Otros cursos</h4>
+<div class="outline-text-4" id="text-org737e41f">
+<ul class="org-ul">
+<li>José A. Alonso <a href="../li-12/index.html">Lógica informática</a> (Univ. de Sevilla, 2012-13).</li>
+<li>Yves Bertot, Pierre Casteran, Benjamin Gregoire, Pierre Letouzey y Assia Mahboubi <a href="https://web.archive.org/web/20250225153524/http://www.di.ens.fr/~zappa/teaching/coq/ecole11">Modelling and verifying algorithms in Coq: an introduction</a>. (INRIA Paris-Rocquencourt, 14-18 noviembre 2011).</li>
+<li>Pierre Castéran <a href="https://web.archive.org/web/20250225153524/http://www.labri.fr/perso/casteran/FM/Logique/index.html">Logic (Master in verification)</a> (Univ. de Burdeos, 2011-12).</li>
+<li>Peter Lucas <a href="https://web.archive.org/web/20250225153524/http://www.cs.ru.nl/~peterl/teaching/KeR/">Knowledge representation and reasoning</a> (Radboud University # egen, 2011-12).</li>
+<li>Larry Paulson <a href="https://web.archive.org/web/20250225153524/http://www.cl.cam.ac.uk/Teaching/current/LogicProof/">Logic and proof</a> (Univ. de Cambridge, 2011-12).</li>
+<li>Riccardo Pucella <a href="https://web.archive.org/web/20250225153524/http://www.ccs.neu.edu/home/riccardo/courses/csu290-sp09/index.html">Logic and computation</a> (Northeastern University, 2009). Curso con ACL2.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org6713b31" class="outline-2">
+<h2 id="org6713b31">Sistemas</h2>
+<div class="outline-text-2" id="text-org6713b31">
+<ul class="org-ul">
+<li><a href="https://web.archive.org/web/20250227111200/http://www.glc.us.es/apli2">APLI2 (APLIcación de Ayuda Para Lógica Informática)</a>.</li>
+<li><a href="https://web.archive.org/web/20250227111200/http://www.cl.cam.ac.uk/research/hvg/Isabelle">Isabelle/HOL</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+
+<hr>
+<table border="0" align="right">
+ <tr>
+  <td><a href="https://jaalonso.github.io">José A. Alonso Jiménez</a></td>
+ </tr>
+ <tr>
+  <td>Sevilla, 29 de junio del 2025</td>
+ </tr>
+ <tr>
+  <td><i class="fa fa-cc"></i> Licencia: <a href="https://creativecommons.org/licenses/by-nc-sa/2.5/es/">Creative Commons</a>.</td>
+</tr>
+</div>
+</body>
+</html>
