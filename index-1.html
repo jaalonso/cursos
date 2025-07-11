@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es">
+<head>
+<!-- 11 de julio del 2025 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cursos impartidos</title>
+<meta name="author" content="José A. Alonso" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+<link rel="stylesheet" type="text/css" href="./css/estilo-org.css" />
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="shortcut icon" href="./imagenes/favicon.ico">
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">Cursos impartidos</h1>
+<p>
+Esta página recopila, en orden cronológico, los enlaces a todos los
+cursos que he impartido.
+</p>
+
+<div id="outline-container-orgf697d2b" class="outline-2">
+<h2 id="orgf697d2b">Curso 1989-90</h2>
+<div class="outline-text-2" id="text-orgf697d2b">
+<ul class="org-ul">
+<li><a href="./tc-89/index.html">Teoría de conjuntos (1989-90)</a>. (2º de Licenciatura en Matemáticas).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org80f2e76" class="outline-2">
+<h2 id="org80f2e76">Curso 1990-91</h2>
+<div class="outline-text-2" id="text-org80f2e76">
+<ul class="org-ul">
+<li><a href="./iacs-90">Implementación de algoritmos y cálculo simbólico (1990-91)</a>. (2º de Diplomatura en Estadística).</li>
+<li><a href="./lisp-90">Programación en Lisp (1990-91)</a>. (Cursos del CICA).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5870b16" class="outline-2">
+<h2 id="org5870b16">Curso 1991-92</h2>
+<div class="outline-text-2" id="text-org5870b16">
+<ul class="org-ul">
+<li><a href="./tc-91/index.html">Teoría de conjuntos (1991-92)</a>. (2º de Licenciatura en Matemáticas).</li>
+<li><a href="./iacs-91/index.html">Implementación de algoritmos y cálculo simbólico (1991-92)</a>. (2º de Diplomatura en Estadística).</li>
+<li><a href="./slc-91/index.html">Seminario de lógica computacional (1991-92)</a>. (Doctorado).</li>
+<li><a href="./lisp-91/index.html">Programación en Lisp (1991-92)</a>. (Cursos del CICA).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org404e42e" class="outline-2">
+<h2 id="org404e42e">Curso 1992-93</h2>
+<div class="outline-text-2" id="text-org404e42e">
+<ul class="org-ul">
+<li><a href="./tc-92/index.html">Teoría de conjuntos (1992-93)</a>. (2º de Licenciatura en Matemáticas).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1effe5f" class="outline-2">
+<h2 id="org1effe5f">Curso 1993-94</h2>
+<div class="outline-text-2" id="text-org1effe5f">
+<ul class="org-ul">
+<li><a href="./tc-93/index.html">Teoría de conjuntos (1993-94)</a>. (2º de Licenciatura en Matemáticas).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org0955bf4" class="outline-2">
+<h2 id="org0955bf4">Curso 1995-96</h2>
+<div class="outline-text-2" id="text-org0955bf4">
+<ul class="org-ul">
+<li><a href="./se-95/index.html">Sistemas expertos (1995-96)</a>. (5º de Licenciatura en Informática).</li>
+<li><a href="./slc-95/index.html">Seminario de lógica computacional (1995-96)</a>. (Doctorado).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org92597ad" class="outline-2">
+<h2 id="org92597ad">Curso 1996-97</h2>
+<div class="outline-text-2" id="text-org92597ad">
+<ul class="org-ul">
+<li><a href="./hse-96/index.html">Heurística y sistemas expertos (1996-97)</a>. (3º de Licenciatura en Estadística).</li>
+<li><a href="./slc-96/index.html">Seminario de lógica computacional (1996-97)</a>. (Doctorado).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgaa07777" class="outline-2">
+<h2 id="orgaa07777">Curso 1997-98</h2>
+<div class="outline-text-2" id="text-orgaa07777">
+<ul class="org-ul">
+<li><a href="./ia1-97/index.html">Inteligencia artificial I (1997-98)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ia2-97/index.html">Inteligencia artificial II (1997-98)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./i1e-97/index.html">Informática (1997-98)</a>. (1º de Diplomatura en Estadística).</li>
+<li><a href="./tc-97/index.html">Teoría de conjuntos (1997-98)</a>. (2º de Licenciatura en Matemáticas).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org35c6159" class="outline-2">
+<h2 id="org35c6159">Curso 1998-99</h2>
+<div class="outline-text-2" id="text-org35c6159">
+<ul class="org-ul">
+<li><a href="./ia1-98/index.html">Inteligencia artificial I (1998-99)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ia2-98/index.html">Inteligencia artificial II (1998-99)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ra-98/index.html">Razonamiento automático (1998-99)</a>. (5º de Ingeniería Informática).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org35ad468" class="outline-2">
+<h2 id="org35ad468">Curso 1999-00</h2>
+<div class="outline-text-2" id="text-org35ad468">
+<ul class="org-ul">
+<li><a href="./pd-99/index.html">Programación declarativa (1999-00)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./lp-99/index.html">Lógica y programación (1999-00)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./ia1-99/index.html">Inteligencia artificial I (1999-00)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ia2-99/index.html">Inteligencia artificial II (1999-00)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ra-99/index.html">Razonamiento automático (1999-00)</a>. (5º de Ingeniería Informática).</li>
+<li><a href="./md-99/index.html">Minería de datos (1999-00)</a>. (Master de Estadística Pública).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org330836b" class="outline-2">
+<h2 id="org330836b">Curso 2000-01</h2>
+<div class="outline-text-2" id="text-org330836b">
+<ul class="org-ul">
+<li><a href="./pd-00/index.html">Programación declarativa (2000-01)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./ia2-00/index.html">Inteligencia artificial II (2000-01)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ra-00/index.html">Razonamiento automático (2000-01)</a>. (5º de Ingeniería Informática).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgded2a38" class="outline-2">
+<h2 id="orgded2a38">Curso 2001-02</h2>
+<div class="outline-text-2" id="text-orgded2a38">
+<ul class="org-ul">
+<li><a href="./pd-01/index.html">Programación declarativa (2001-02)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./ia2-01/index.html">Inteligencia artificial II (2001-02)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./mfcia-01/index.html">Métodos formales en computación e I.A (2001-02)</a>. (Doctorado).</li>
+<li><a href="./ra-01/index.html">Razonamiento automático (2001-02)</a>.(Doctorado).</li>
+<li><a href="./md-01/index.html">Minería de datos (2001-02)</a>. (Master de Estadística Pública).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcbae703" class="outline-2">
+<h2 id="orgcbae703">Curso 2002-03</h2>
+<div class="outline-text-2" id="text-orgcbae703">
+<ul class="org-ul">
+<li><a href="./pd-02/index.html">Programación declarativa (2002-03)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./ia2-02/index.html">Inteligencia artificial II (2002-03)</a>. (4º de Ingeniería Informática).</li>
+<li><a href="./ra-02/index.html">Razonamiento automático (2002-03)</a>. (5º de Ingeniería Informática).</li>
+<li><a href="./dat-02/index.html">Demostración automática de teoremas (2002-03)</a>. (Libre configuración).</li>
+<li><a href="./mfcia-02/index.html">Métodos formales en computación e I.A. (2002-03)</a>. (Doctorado).</li>
+<li><a href="./d-pl-02/index.html">Programación lógica (2002-03)</a>. (Doctorado).</li>
+<li><a href="./ial-02/index.html">Inteligencia artificial, lógicamente</a>.</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6b94ec" class="outline-2">
+<h2 id="orgd6b94ec">Curso 2003-04</h2>
+<div class="outline-text-2" id="text-orgd6b94ec">
+<ul class="org-ul">
+<li><a href="./li-03/index.html">Lógica informática (2003-04)</a>. (2º de Ingeniería Informática).</li>
+<li><a href="./pd-03/index.html">Programación declarativa (2003-04)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./dat-03/index.html">Demostración automática de teoremas (2003-04)</a>. (Libre configuración).</li>
+<li><a href="./d-pl-03/index.html">Programación lógica (2003-04)</a>. (Doctorado).</li>
+<li><a href="./d-ra-03/index.html">Razonamiento automático (2003-04)</a>. (Doctorado).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcddffcf" class="outline-2">
+<h2 id="orgcddffcf">Curso 2004-05</h2>
+<div class="outline-text-2" id="text-orgcddffcf">
+<ul class="org-ul">
+<li><a href="./li-04/index.html">Lógica informática (2004-05)</a>. (2º de Ingeniería Informática).</li>
+<li><a href="./pd-04/index.html">Programación declarativa (2004-05)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./dat-04/index.html">Demostración automática de teoremas (2004-05)</a>. (Libre configuración).</li>
+<li><a href="./d-pl-04/index.html">Programación lógica (2004-05)</a>. (Doctorado).</li>
+<li><a href="./d-ra-04/index.html">Razonamiento automático (2004-05)</a>. (Doctorado).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc384c95" class="outline-2">
+<h2 id="orgc384c95">Curso 2005-06</h2>
+<div class="outline-text-2" id="text-orgc384c95">
+<ul class="org-ul">
+<li><a href="./li-05/index.html">Lógica informática (2005-06)</a>. (2º de Ingeniería Informática).</li>
+<li><a href="./pd-05/index.html">Programación declarativa (2005-06)</a>. (3º de Ingeniería Informática).</li>
+<li><a href="./d-ra-05/index.html">Razonamiento automático (2005-06)</a>. (Doctorado).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5696c95" class="outline-2">
+<h2 id="org5696c95">Curso 2006-07</h2>
+<div class="outline-text-2" id="text-org5696c95">
+<ul class="org-ul">
+<li><a href="./li-06/index.html">Lógica informática (2006-07)</a>. (2º de Ingeniería Informática).</li>
+<li><a href="./pd-06/index.html">Programación declarativa (2006-07)</a>. (3º de Ingeniería Informática).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdff73af" class="outline-2">
+<h2 id="orgdff73af">Curso 2007-08</h2>
+<div class="outline-text-2" id="text-orgdff73af">
+<ul class="org-ul">
+<li><a href="./li-07/index.html">Lógica informática (2007-08)</a>. (2º de Ingeniería Informática)</li>
+<li><a href="./pd-07/index.html">Programación declarativa (2007-08)</a>. (3º de Ingeniería Informática)</li>
+<li><a href="./d-pl-07/index.html">Programación lógica (2007-08)</a>. (Doctorado)</li>
+<li><a href="./d-ra-07/index.html">Razonamiento automático (2007-08)</a>. (Doctorado)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org36b9fc7" class="outline-2">
+<h2 id="org36b9fc7">Curso 2008-09</h2>
+<div class="outline-text-2" id="text-org36b9fc7">
+<ul class="org-ul">
+<li><a href="./li-08/index.html">Lógica informática (2008-09)</a>. (2º de Ingeniería Informática)</li>
+<li><a href="./pd-08/index.html">Programación declarativa (2008-09)</a>. (3º de Ingeniería Informática)</li>
+<li><a href="./d-pl-08/index.html">Programación lógica (2008-09)</a>. (Doctorado)</li>
+<li><a href="./d-ra-08/index.html">Razonamiento automático (2008-09)</a>. (Doctorado)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc78fe05" class="outline-2">
+<h2 id="orgc78fe05">Curso 2009-10</h2>
+<div class="outline-text-2" id="text-orgc78fe05">
+<ul class="org-ul">
+<li><a href="./i1m-09/index.html">Informática (2009-10)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-09/index.html">Lógica informática (2009-10)</a>. (2º de Ingeniería Informática)</li>
+<li><a href="./pd-09/index.html">Programación declarativa (2009-10)</a>. (3º de Ingeniería Informática)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgae9c04b" class="outline-2">
+<h2 id="orgae9c04b">Curso 2010-11</h2>
+<div class="outline-text-2" id="text-orgae9c04b">
+<ul class="org-ul">
+<li><a href="./i1m-10/index.html">Informática (2010-11)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-10/index.html">Lógica informática (2010-11)</a>. (2º de Ingeniería Informática)</li>
+<li><a href="./m-ra-10/index.html">Razonamiento automático (2010-11)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+<li><a href="./DAO2011/index.html">Demostración asistida por ordenador (2010-11)</a>. (Curso de formación especializada del CFP de la US).</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org955159a" class="outline-2">
+<h2 id="org955159a">Curso 2011-12</h2>
+<div class="outline-text-2" id="text-org955159a">
+<ul class="org-ul">
+<li><a href="./i1m-11/index.html">Informática (2011-12)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-11/index.html">Lógica informática (2011-12)</a>. (2º del Grado en Ingeniería Informática)</li>
+<li><a href="./lmf-11/index.html">Lógica matemática y fundamentos (2011-12)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-11/index.html">Razonamiento automático (2011-12)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org891b226" class="outline-2">
+<h2 id="org891b226">Curso 2012-13</h2>
+<div class="outline-text-2" id="text-org891b226">
+<ul class="org-ul">
+<li><a href="./i1m-12/index.html">Informática (2012-13)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-12/index.html">Lógica informática (2012-13)</a>. (2º del Grado en Ingeniería Informática)</li>
+<li><a href="./lmf-12/index.html">Lógica matemática y fundamentos (2012-13)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-12/index.html">Razonamiento automático (2012-13)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb9ef9a3" class="outline-2">
+<h2 id="orgb9ef9a3">Curso 2013-14</h2>
+<div class="outline-text-2" id="text-orgb9ef9a3">
+<ul class="org-ul">
+<li><a href="./i1m-13/index.html">Informática (2013-14)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-13/index.html">Lógica informática (2013-14)</a>. (2º del Grado en Ingeniería Informática)</li>
+<li><a href="./lmf-13/index.html">Lógica matemática y fundamentos (2013-14)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-13/index.html">Razonamiento automático (2013-14)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1a12da7" class="outline-2">
+<h2 id="org1a12da7">Curso 2014-15</h2>
+<div class="outline-text-2" id="text-org1a12da7">
+<ul class="org-ul">
+<li><a href="./i1m-14/index.html">Informática (2014-15)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-14/index.html">Lógica informática (2014-15)</a>. (2º del Grado en Ingeniería Informática)</li>
+<li><a href="./lmf-14/index.html">Lógica matemática y fundamentos (2014-15)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-14/index.html">Razonamiento automático (2014-15)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgdc31f29" class="outline-2">
+<h2 id="orgdc31f29">Curso 2015-16</h2>
+<div class="outline-text-2" id="text-orgdc31f29">
+<ul class="org-ul">
+<li><a href="./i1m-15/index.html">Informática (2015-16)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./li-15/index.html">Lógica informática (2015-16)</a>. (2º del Grado en Ingeniería Informática)</li>
+<li><a href="./lmf-15/index.html">Lógica matemática y fundamentos (2015-16)</a>. (3º del Grado en Matemáticas)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orga1a24d4" class="outline-2">
+<h2 id="orga1a24d4">Curso 2016-17</h2>
+<div class="outline-text-2" id="text-orga1a24d4">
+<ul class="org-ul">
+<li><a href="./i1m-16/index.html">Informática (2016-17)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./lmf-16/index.html">Lógica matemática y fundamentos (2016-17)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-16/index.html">Razonamiento automático (2016-17)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc82b223" class="outline-2">
+<h2 id="orgc82b223">Curso 2017-18</h2>
+<div class="outline-text-2" id="text-orgc82b223">
+<ul class="org-ul">
+<li><a href="./i1m-17/index.html">Informática (2017-18)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./lmf-17/index.html">Lógica matemática y fundamentos (2017-18)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-17/index.html">Razonamiento automático (2017-18)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org86de986" class="outline-2">
+<h2 id="org86de986">Curso 2018-19</h2>
+<div class="outline-text-2" id="text-org86de986">
+<ul class="org-ul">
+<li><a href="./i1m-18/index.html">Informática (2018-19)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./lmf-18/index.html">Lógica matemática y fundamentos (2018-19)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-18/index.html">Razonamiento automático (2018-19)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3e51683" class="outline-2">
+<h2 id="org3e51683">Curso 2019-20</h2>
+<div class="outline-text-2" id="text-org3e51683">
+<ul class="org-ul">
+<li><a href="./i1m-19/index.html">Informática (2019-20)</a>. (1º del Grado en Matemáticas)</li>
+<li><a href="./lmf-19/index.html">Lógica matemática y fundamentos (2019-20)</a>. (3º del Grado en Matemáticas)</li>
+<li><a href="./m-ra-19/index.html">Razonamiento automático (2019-20)</a>. (Máster Universitario en Lógica, Computación e Inteligencia Artificial)</li>
+</ul>
+</div>
+</div>
+</div>
+</body>
+</html>
